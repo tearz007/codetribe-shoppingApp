@@ -1,0 +1,64 @@
+<div class="menu">
+  <div class="menu_container">
+    <div class="heading">
+      <h2>Promotional</h2>
+    </div>
+    <div class="collection">
+      <a
+        *ngFor="let item of product.promo; index as i; last as isLast"
+        (click)="
+          click(product.promo, i, product.promoDiscrib, product.promoPrice)
+        "
+        routerLink="main/card"
+      >
+        <div class="prodContainer">
+          <div class="img">
+            <img src="{{ url + item }}" alt="long hair" />
+          </div>
+          <ng-template [ngIf]="isLast">
+            <div class="last">
+              <div class="img"></div>
+            </div>
+          </ng-template>
+          <div class="descrip">
+            <h3>{{ product.promoDiscrib[i] }}</h3>
+            <h3>{{ "R" + product.promoPrice[i] }}</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!--short hair-->
+  <div class="menu_container">
+    <div class="heading">
+      <h2>Short hair</h2>
+    </div>
+    <div class="collection">
+      <a
+        *ngFor="let item of product.short; index as i; last as isLast"
+        (click)="
+          click(product.short, i, product.shortDiscrib, product.shortPrice)
+        "
+        routerLink="main/card"
+      >
+        <div class="prodContainer">
+          <div class="img">
+            <img src="{{ url + item }}" alt="long hair" />
+          </div>
+          <ng-template [ngIf]="isLast">
+            <div class="last">
+              <div class="img"></div>
+            </div>
+          </ng-template>
+
+          <div class="descrip">
+            <h3>{{ product.shortDiscrib[i] }}</h3>
+            <h3>{{ "R" + product.shortPrice[i] }}</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!--------------------long------------->
+  </div>
+</div>

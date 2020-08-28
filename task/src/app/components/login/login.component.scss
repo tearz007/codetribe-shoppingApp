@@ -1,0 +1,65 @@
+/* -----------------Login----------------- */
+.container {
+  display: block;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 550px;
+  .log_top {
+    width: 100%;
+    height: 300px;
+    background-image: url('../../../assets/hairPics/794e6fadef4eb04950bee9ea1cbdb50a.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .log_top {
+    .login_menu {
+      .text input {
+        margin-top: 20px;
+        border: none;
+        outline: none;
+        display: block;
+        border-bottom: black solid 1px;
+      }
+    }
+  }
+
+  .log_dit {
+    margin-top: 10px;
+    width: 100%;
+    .login_menu {
+      padding-top: 10px;
+      .btn {
+        margin-top: 30px;
+        button {
+          background-color: aqua;
+          width: 100px;
+          height: 25px;
+
+        }
+      }
+      label {
+        float: right;
+        a {
+          //color: aqua;
+          text-decoration: none;
+          font-size: 20px;
+        }
+      }
+
+      .text input {
+        margin-top: 20px;
+        width: 98%;
+        outline: none;
+        border: none;
+        display: block;
+        border-bottom: black solid 1px;
+         font-size: 20px;
+      }
+    }
+  }
+
+}

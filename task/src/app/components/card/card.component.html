@@ -1,0 +1,31 @@
+<div class="menu">
+  <div class="collection">
+    <div class="add">
+      <div class="img">
+        <img src="{{ path }}" />
+      </div>
+      <div class="details">
+        <div class="box">
+          <h3>{{ discrip }}</h3>
+          <h3>{{ price }}</h3>
+
+          <div class="btn">
+            <button (click)="addcard()">AddCard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="checkout">
+      <div class="box">
+        <h2>Card Summary</h2>
+        <h3></h3>
+        <h3>{{ "Total Price : R" + totalPrice }}</h3>
+        <h3>{{ "Total items :" + totalItem }}</h3>
+        <div class="btn">
+          <button (click)="shopMore()">shopMore</button>
+          <button (click)="toview()">ViewAll</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="log_top"></div>
+
+  <div class="log_dit">
+    <div class="login_menu">
+      <form >
+        <div class="text">
+          <input type="text"  placeholder="userName" formControlName="username" required="user" />
+        </div>
+        <div class="text">
+          <input type="password" placeholder="password" formControlName="password" required="user" />
+        </div>
+
+        <label><input type="radio" value="password"> <a routerLink="#">forgot password</a></label>
+
+        <div class="btn">
+          <button (click)= "tomain()" [disabled]='user.invalid' >LOGIN</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

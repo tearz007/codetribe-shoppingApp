@@ -1,0 +1,25 @@
+
+<div class="menu">
+  <div *ngFor="let item of card2; index as i" class="collection">
+
+    <div class="add">
+      <div class="img">
+        <img src="{{ item.path }}" />
+      </div>
+      <div class="details">
+        <div class="box">
+          <h3>{{ item.discrip }}</h3>
+          <h3>{{ "R"+item.price }}</h3>
+          <div class="btn">
+            <button (click)="shopMore()">shopMore</button>
+          </div>
+          <div class="btn ">
+            <button class="remove" (click)="deleter(i)">Remove</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

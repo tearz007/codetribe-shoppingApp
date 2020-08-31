@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: FormGroup;
+  store:any={};
+
   constructor(private formBuild: FormBuilder, private route: Router) {
     this.user = this.formBuild.group({
       username: ['', Validators.required],
@@ -24,5 +27,4 @@ export class LoginComponent implements OnInit {
   tomain() {
     this.route.navigate(['']);
   }
-
 }

@@ -1,36 +1,102 @@
 <div class="container">
   <div class="log_top"></div>
 
-  <div class="log_dit">
-    <div class="login_menu">
-      <form [formGroup]="user">
-        <div class="text">
-          <input
-            type="text"
-            placeholder="userName"
-            formControlName="username"
-            required="user"
-          />
-        </div>
-        <div class="text">
-          <input
-            type="password"
-            placeholder="password"
-            formControlName="password"
-            required="user"
-          />
-        </div>
+  <form #userform="ngForm">
+    <div class="log_dit">
+      <div class="login_menu">
+        <form #userForm="ngForm">
+          <div class="text">
+            <input
+              type="text"
+              placeholder="userName"
+              name="user"
+              [(ngModel)]="store.user"
+              required
+              #name="ngModel"
+            />
+          </div>
 
-        <label
-          ><input type="radio" value="password" />
-          <a routerLink="#">forgot password</a></label
-        >
+          <div
+            *ngIf="name.invalid && (name.touched || name.dirty)"
+          >
+            <div *ngIf="name.errors.required">Name required</div>
 
-        <div class="btn">
-          <button (click)="tomain()" [disabled]="user.invalid">LOGIN</button>
-        </div>
-      </form>
+          </div>
+          <div *ngIf="name.value != 'user' && name.value.length>0">userName is user</div>
+
+          <div class="text">
+            <input
+              type="password"
+              placeholder="password"
+              name="password"
+              [(ngModel)]="store.password"
+              #password="ngModel"
+              required
+            />
+          </div>
+          <div *ngIf="password.invalid && (password.touched )">
+            <div *ngIf="password.errors.required">password required</div>
+          </div>
+          <div *ngIf="password.value != 'user' && password.value.length>0 ">incorrect password</div>
+
+
+
+
+
+          <label>
+            <input type="radio" value="password" />
+            <a routerLink="#">forgot password</a></label
+          >
+          <div class="btn">
+            <button (click)="tomain()">LOGIN</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </form>
 </div>
 <router-outlet></router-outlet>
+<!--
+
+
+
+
+  <label for="name">userName </label>
+    <input
+      type="text"
+      required
+      minlength="4"
+      [(ngModel)]="store.name"
+      name="userName"
+      #name="ngModel"
+
+    />
+    <label for="password">password </label>
+    <input
+      type="password"
+      required
+      minlength="4"
+      [(ngModel)]="store.password"
+      name="password"
+      #password="ngModel"
+
+    />
+
+    <div
+      *ngIf="name.invalid && (name.touched || name.dirty)"
+      class="form control"
+    >
+      <div *ngIf="name.errors.required">Name required</div>
+      <div *ngIf="name.errors.minlength">minmun length is 4</div>
+      <div *ngIf="name.value!='user'">userName is user</div>
+
+    </div>
+
+    <div
+      *ngIf="password.invalid && (password.touched || password.dirty)"
+      class="form control"
+    >
+      <div *ngIf="password.errors.required">password required</div>
+      <div *ngIf="password.errors.minlength">minmun length is 4</div>
+      <div *ngIf="password.value!='user'">incorrect password</div>
+    </div>-->
